@@ -60,14 +60,12 @@ $(document).ready(function () {
                 });
         } else
             $('.header__wrap').stop(true).css({"position": 'static', "background": "none" });
-
-
-
-
-
-
     });
 
+
+    $( '.navTrigger' ).click(function() {
+        $('.content').toggleClass( 'scaled' );
+    });
 
 
 

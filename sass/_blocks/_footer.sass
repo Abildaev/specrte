@@ -25,6 +25,7 @@
 
 
   &__link
+    transition: 0.3s
     color: $subtitleColor
     margin-bottom: rem(15px)
     text-align: center
@@ -33,6 +34,9 @@
       margin-bottom: 0
       display: inline-block
       margin-left: 1%
+
+  &__link:hover
+    color: $secondColor
 
 
 
@@ -75,10 +79,17 @@
     height: rem(45px)
     box-sizing: border-box
 
-  &__social:hover
-    color: $bgColorTwo
-    border: rem(1px) solid $secondColor
-    background: $secondColor
+  &__social:nth-child(1):hover
+    border: rem(1px) solid #c13584
+    background: #c13584
+
+  &__social:nth-child(2):hover
+    border: rem(1px) solid #3b5998
+    background: #3b5998
+
+  &__social:nth-child(3):hover
+    border: rem(1px) solid #0088cc
+    background: #0088cc
 
 
 
