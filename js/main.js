@@ -1,19 +1,27 @@
 $(document).ready(function () {
 
-    $('.header__hamburger_trigger').on('click', function (){
-
+    $('.hamburger_trigger').on('click', function () {
         $('.header__menu').toggleClass('is-active');
-        $('.header__hamburger_trigger > span').toggleClass('is-active');
+        if (screen.width <= 960) {
+            $(".content").toggleClass("scaled");
+            $(".wrapper").toggleClass("fixed");
+        }
     });
 
-    $('a[href^="#"]').click(function () {
-        const target = $(this).attr("href");
-        $("html, body").animate({
-            scrollTop: $(target).offset().top -50
-        }, 1000)
-        $('.header__menu').toggleClass('is-active');
-        $('.header__hamburger_trigger > span').toggleClass('is-active');
-    });
+
+    function Scroll() {
+        if (screen.width <= 960) {
+            $(".content").toggleClass("scaled");
+            $(".wrapper").toggleClass("fixed");
+        };
+            const target = $(this).attr("href");
+            $("html, body").animate({
+                scrollTop: $(target).offset().top
+        });
+    }
+
+
+    $('.header__link').click(Scroll);
 
 
     $('.slider-1').owlCarousel({
@@ -29,7 +37,6 @@ $(document).ready(function () {
     });
 
 
-
     $(".slider__portfolio").owlCarousel({
         loop: true,
         margin: 10,
@@ -41,32 +48,33 @@ $(document).ready(function () {
         }
     });
 
-    $(".contact__form").on("click", function () {
+    function AddBack () {
         $(".contact__form").removeClass("is-active");
+        $(".popup__input").removeClass("is-active");
         $(this).addClass("is-active");
+    } ;
 
-    })
+    $(".contact__form").on("click",AddBack);
 
-    $(window).scroll(function () {
-        const distanceTop = $(".services").offset().top -100;
-        if ($(window).scrollTop() > distanceTop) {
-            $(".header__wrap").css(
-                {
-                    'position': 'fixed',
-                    "width": "100%",
-                    "transition": "0.5s",
-                    "background": "#282958",
-                    "z-index": "5"
-                });
-        } else
-            $('.header__wrap').stop(true).css({"position": 'static', "background": "none" });
-    });
+    $(".popup__input").on("click", AddBack);
 
 
-    $( '.navTrigger' ).click(function() {
-        $('.content').toggleClass( 'scaled' );
-    });
+    $('.header__contact').magnificPopup();
 
+    // $(window).scroll(function () {
+    //     const distanceTop = $(".services").offset().top -100;
+    //     if ($(window).scrollTop() > distanceTop) {
+    //         $(".header__wrap").css(
+    //             {
+    //                 'position': 'fixed',
+    //                 "width": "100%",
+    //                 "transition": "0.5s",
+    //                 "background": "#282958",
+    //                 "z-index": "5"
+    //             });
+    //     } else
+    //         $('.header__wrap').stop(true).css({"position": 'static', "background": "none" });
+    // });
 
 
 });

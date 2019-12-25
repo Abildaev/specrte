@@ -74,12 +74,14 @@
     transition: 0.5s
 
   &__logo
+    position: relative
     width: 100%
     max-width: rem(92px)
     +tablet
       max-width: rem(145px)
 
   &__menu
+    position: fixed
     font-family: $font
     transition: 0.5s
     display: flex
@@ -92,27 +94,18 @@
     -webkit-box-align: center
     -webkit-align-items: center
     -ms-flex-align: center
+    overflow: hidden
     justify-content: space-around
     width: 100%
-    background: $mainColor
-    height: calc(100vh - 120px)
-    position: absolute
-    top: rem(75px)
-    right: -100%
-    z-index: 6
-    +tablet
-      top: rem(80px)
+    height: calc(100vh - 100px)
+    top: 0
+    right: -80%
     +laptop
-      padding: 0
       position: static
       background: none
       justify-content: flex-end
       flex-direction: row
       height: 0
-
-  &__menu.is-active
-    right: 0
-
 
   &__list
     +laptop
@@ -158,41 +151,40 @@
     background: none
 
 
-.navigationBackground
-  width: 100%
-  height: 100%
-  background-image: linear-gradient(115deg, #f1c25d, #fc786a)
+.hamburger_trigger
+  position: relative
+  width: rem(40px)
+  height: rem(25px)
+  margin-left: rem(10px)
+  +laptop
+    display: none
+
+.hamburger_trigger span,
+.hamburger_trigger span:before,
+.hamburger_trigger span:after
+  position: absolute
   top: 0
   left: 0
-  position: absolute
-  z-index: 1
-
-.navTrigger
-  position: absolute
-  top: 0
-  left: 0
-  padding: 15px
-  cursor: pointer
-
-  svg
-    fill: orange
-    transform: rotate(90deg) scaleX(-1)
-
-.content
   width: 100%
-  height: 100%
-  position: absolute
-  background: #fff
-  z-index: 2
-  transition: transform 0.4s linear, opacity 0.2s linear 0.2s, visibility 0s linear 0.4s
-  transition-timing-function: cubic-bezier(0.8, 0, 0.6, 1), linear, linear
+  height: rem(3px)
+  background: #a4aead
+  border-radius: rem(5px)
+  transition: linear 0.2s
 
-  &.scaled
-    transform: scale(0.9) translateX(90%)
-    border-radius: 3px
-    box-shadow: 0 3px 22px 0 #bd744b
+.hamburger_trigger span:before,
+.hamburger_trigger span:after
+  content: ' '
+  display: block
 
-  .contentInner
+.hamburger_trigger span:before
+  transform: translateY(18px)
+
+.hamburger_trigger span:after
+  transform: translateY(9px)
+
+
+.popup
+
+  &__input
+    display: block
     width: 100%
-    height: 100%
-    overflow-x: auto
