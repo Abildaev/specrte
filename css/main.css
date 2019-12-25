@@ -325,6 +325,22 @@ ul {
   background: none;
   color: #fff;
 }
+.popup__close {
+  background: #D7FF54;
+  transition: 0.5s;
+  color: #00171F;
+  border-radius: 1.25rem;
+  font-size: 1.125rem;
+  border: 0.0625rem solid rgba(215, 255, 84, 0);
+  position: absolute;
+  right: 0.625rem;
+  top: 0.625rem;
+}
+.popup__close:hover {
+  border: 0.0625rem solid #d7ff54;
+  color: #fff;
+  background: none;
+}
 
 .banner {
   position: relative;

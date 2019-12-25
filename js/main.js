@@ -59,22 +59,13 @@ $(document).ready(function () {
     $(".popup__input").on("click", AddBack);
 
 
-    $('.header__contact').magnificPopup();
+    $('.header__contact').magnificPopup({
+        showCloseBtn: false
+    });
 
-    // $(window).scroll(function () {
-    //     const distanceTop = $(".services").offset().top -100;
-    //     if ($(window).scrollTop() > distanceTop) {
-    //         $(".header__wrap").css(
-    //             {
-    //                 'position': 'fixed',
-    //                 "width": "100%",
-    //                 "transition": "0.5s",
-    //                 "background": "#282958",
-    //                 "z-index": "5"
-    //             });
-    //     } else
-    //         $('.header__wrap').stop(true).css({"position": 'static', "background": "none" });
-    // });
 
+    $('.popup__close').on('click', function () {
+        $.magnificPopup.close();
+    })
 
 });

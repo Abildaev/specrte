@@ -94,8 +94,6 @@ ul
   +desktop
     width: 35%
 
-
-
   h3
     text-align: center
     color: $secondColor
@@ -103,6 +101,9 @@ ul
     font-weight: 400
     +tablet
       font-size: rem(24px)
+
+
+
 
 .form__icon
   opacity: 0.13
@@ -164,6 +165,23 @@ ul
     border: 1px solid rgba(215, 255, 84, 1)
     background: none
     color: $WhiteColor
+
+
+  &__close
+    background: $secondColor
+    transition: 0.5s
+    color: $bgColorTwo
+    border-radius: rem(20px)
+    font-size: rem(18px)
+    border: rem(1px) solid rgba(215,255,84, 0)
+    position: absolute
+    right: rem(10px)
+    top: rem(10px)
+
+  &__close:hover
+    border: rem(1px) solid rgba(215,255,84, 1)
+    color: $WhiteColor
+    background: none
 
 
 
