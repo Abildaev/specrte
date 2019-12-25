@@ -303,6 +303,7 @@ ul {
 }
 .popup__button {
   margin: 0 auto;
+  cursor: pointer;
   background: #D7FF54;
   border: 1px solid rgba(215, 255, 84, 0);
   padding: 0.75rem 1.5rem;
@@ -545,11 +546,6 @@ ul {
 
 .hamburger_trigger span:after {
   transform: translateY(9px);
-}
-
-.popup__input {
-  display: block;
-  width: 100%;
 }
 
 .services__group {
@@ -1145,6 +1141,7 @@ ul {
 .contact__button {
   margin: 0 auto;
   background: #D7FF54;
+  cursor: pointer;
   border: 1px solid rgba(215, 255, 84, 0);
   padding: 0.75rem 1.5rem;
   font-size: 1.125rem;
