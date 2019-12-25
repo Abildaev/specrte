@@ -1,5 +1,38 @@
 $(document).ready(function () {
 
+    $(".popup__form").submit(function() { //Change
+        var th = $(this);
+        $.ajax({
+            type: "POST",
+            url: "mail.php", //Change
+            data: th.serialize()
+        }).done(function() {
+            $(".popup__title").text("Спасибо письмо отправлено!");
+            setTimeout(function() {
+                // Done Functions
+                th.trigger("reset");
+            }, 1000);
+        });
+        return false;
+    });
+
+    $(".contact__forms").submit(function() { //Change
+        var th = $(this);
+        $.ajax({
+            type: "POST",
+            url: "mail.php", //Change
+            data: th.serialize()
+        }).done(function() {
+            alert("Спасибо письмо отправлено!");
+            setTimeout(function() {
+                // Done Functions
+                th.trigger("reset");
+            }, 1000);
+        });
+        return false;
+    });
+
+
     $('.hamburger_trigger').on('click', function () {
         $('.header__menu').toggleClass('is-active');
         if (screen.width <= 960) {
@@ -35,7 +68,6 @@ $(document).ready(function () {
             }
         }
     });
-
 
     $(".slider__portfolio").owlCarousel({
         loop: true,

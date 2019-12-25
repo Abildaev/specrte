@@ -82,14 +82,22 @@
             <div id="popup" class="mfp-hide">
                 <div class="form__container">
                     <button type="button" class="popup__close">X</button>
-                    <h3>Заказать обратный звонок</h3>
+                    <h3 class="popup__title">Заказать обратный звонок</h3>
                     <img src="img/contact/message.png" alt="#" class="form__icon">
-                    <form action="" class="popup__form" >
-                        <input type="text" name="popup_name" placeholder="Ваше имя?" id="popup__name" class="popup__input">
-                        <input type="text" name="popup_phone" placeholder="Номер телефона?" id="popup__number" class="popup__input">
-                        <input type="email" name="popup_email" placeholder="Email" id="popup__email" class="popup__input">
+                    <form  class="popup__form">
+                        <!-- Hidden Required Fields -->
+                        <input type="hidden" name="project_name" value="Spectre">
+                        <input type="hidden" name="admin_email" value="abildaev1996@gmail.com">
+                        <input type="hidden" name="form_subject" value="popup message">
+                        <!-- END Hidden Required Fields -->
+
+                        <input type="text" name="popup_name" placeholder="Ваше имя?" id="popup__name" class="popup__input" required>
+                        <input type="text" name="popup_phone" placeholder="Номер телефона?" id="popup__number" class="popup__input" required>
+                        <input type="email" name="popup_email" placeholder="Email" id="popup__email" class="popup__input" required>
                         <button type="submit" class="popup__button" value="Submit" class="popup__button">Отправить</button>
                     </form>
+
+
 
                 </div>
             </div>
@@ -514,14 +522,20 @@
             <div class="container">
                 <div class="contact__group">
                     <img src="img/contact/message.png" alt="#" class="contact__icon">
-                    <form action="./php/mail.php" class="contact__forms" method="post">
+                    <form  class="contact__forms">
+                        <!-- Hidden Required Fields -->
+                        <input type="hidden" name="project_name" value="Site Name">
+                        <input type="hidden" name="admin_email" value="admin@mail.com">
+                        <input type="hidden" name="form_subject" value="Form Subject">
+                        <!-- END Hidden Required Fields -->
+
                         <div class="contact__flex">
                             <input type="text" name="user_name" placeholder="Как Вас зовут?"
-                                   class="contact__form contact__form_input" id="name">
+                                   class="contact__form contact__form_input" id="name" required>
                             <input type="text" name="user_phone" placeholder="Номер телефона?"
-                                   class="contact__form contact__form_input" id="number">
+                                   class="contact__form contact__form_input" id="number" required >
                             <input type="email" name="user_email" placeholder="Email"
-                                   class="contact__form contact__form_input" id="email">
+                                   class="contact__form contact__form_input" id="email" required>
                         </div>
                         <div class="contact__flex">
                     <textarea type="text" name="user_message" class="contact__form contact__form_message"
