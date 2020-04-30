@@ -5,7 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "add": "^2.0.6",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "magnific-popup": "^1.1.0",
     "or": "^0.2.0",
     "owl.carousel": "^2.3.4",
